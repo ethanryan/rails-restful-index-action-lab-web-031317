@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Application Layout</title>
+  <title>Students HTML Page</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<h1>These are the students on the students.html page:</h1>
+
+
+<% Student.all.each do |student|%>
+<%= student.first_name%> <%=student.last_name %>
+<% end %>
+
 
 </body>
 </html>
